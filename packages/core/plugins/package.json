@@ -1,0 +1,32 @@
+{
+  "name": "@thinkeloquent/core-plugins",
+  "version": "1.0.0",
+  "description": "Plugin management system for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs"
+    },
+    "./plugin-manager": {
+      "import": "./plugin-manager.mjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "plugins",
+    "plugin-manager",
+    "fastify-plugins",
+    "module-loading",
+    "dynamic-import"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "@thinkeloquent/core-cache": "file:../cache"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

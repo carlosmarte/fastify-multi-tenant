@@ -1,0 +1,37 @@
+{
+  "name": "@thinkeloquent/core-loading-strategy",
+  "version": "1.0.0",
+  "description": "Resource loading strategies for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./base": "./base.mjs",
+    "./strategies/hierarchical": "./strategies/hierarchical.mjs",
+    "./strategies/flat": "./strategies/flat.mjs",
+    "./strategies/cached": "./strategies/cached.mjs",
+    "./loaders/resource-loader": "./loaders/resource-loader.mjs",
+    "./utils/merge-strategies": "./utils/merge-strategies.mjs"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "resource-loading",
+    "strategy-pattern",
+    "hierarchical-loading",
+    "caching",
+    "fastify",
+    "multi-tenant"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "@thinkeloquent/core-folders": "file:../folders",
+    "@thinkeloquent/core-configure": "file:../configure",
+    "deepmerge": "^4.3.0",
+    "fast-glob": "^3.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@thinkeloquent/core-exceptions",
+  "version": "1.0.0",
+  "description": "Core exception classes and error handling utilities for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs"
+    },
+    "./result": {
+      "import": "./result.mjs"
+    },
+    "./errors/validation": {
+      "import": "./errors/validation.mjs"
+    },
+    "./errors/entity": {
+      "import": "./errors/entity.mjs"
+    },
+    "./errors/plugin": {
+      "import": "./errors/plugin.mjs"
+    },
+    "./errors/abstract": {
+      "import": "./errors/abstract.mjs"
+    },
+    "./errors/database": {
+      "import": "./errors/database.mjs"
+    },
+    "./errors/module": {
+      "import": "./errors/module.mjs"
+    },
+    "./errors/server": {
+      "import": "./errors/server.mjs"
+    },
+    "./errors/configuration": {
+      "import": "./errors/configuration.mjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "exceptions",
+    "errors",
+    "error-handling",
+    "validation",
+    "result-pattern"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

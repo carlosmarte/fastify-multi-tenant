@@ -1,0 +1,40 @@
+{
+  "name": "@thinkeloquent/core-server",
+  "version": "1.0.0",
+  "description": "Server lifecycle and management components for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./server-lifecycle-manager": "./server-lifecycle-manager.mjs",
+    "./plugin-manager": "./plugin-manager.mjs",
+    "./generic-entity-server": "./generic-entity-server.mjs"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "server",
+    "lifecycle",
+    "plugin-manager",
+    "fastify",
+    "multi-tenant"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "@thinkeloquent/core-security": "file:../security",
+    "@thinkeloquent/core-configure": "file:../configure",
+    "@thinkeloquent/core-entities": "file:../entities",
+    "@thinkeloquent/core-folders": "file:../folders",
+    "@thinkeloquent/core-loading-strategy": "file:../loading-strategy",
+    "@thinkeloquent/core-entity-identification-strategy": "file:../entity-identification-strategy",
+    "@thinkeloquent/core-plugins": "file:../plugins",
+    "@thinkeloquent/core-orchestrator": "file:../orchestrator",
+    "close-with-grace": "^1.3.0",
+    "fastify": "^4.24.0",
+    "import-meta-resolve": "^4.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

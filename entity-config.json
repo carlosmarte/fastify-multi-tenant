@@ -1,0 +1,193 @@
+{
+  "entities": {
+    "definitions": {
+      "tenant": {
+        "enabled": true,
+        "basePath": "/tenants",
+        "identificationStrategy": "subdomain",
+        "extractPattern": "^([^.]+)\\.",
+        "routePrefix": "/tenants/{entityId}",
+        "priority": 1,
+        "maxInstances": 50,
+        "resourceLoading": {
+          "schemas": true,
+          "services": true,
+          "plugins": true,
+          "routes": true
+        },
+        "mergeStrategy": "override",
+        "parent": null,
+        "security": {
+          "isolation": "strict",
+          "crossEntityAccess": false,
+          "authentication": "optional",
+          "authorization": "rbac"
+        }
+      },
+      "product": {
+        "enabled": true,
+        "basePath": "/products",
+        "identificationStrategy": "path",
+        "pathPrefix": "/products",
+        "pathSegment": 1,
+        "routePrefix": "/products/{entityId}",
+        "priority": 2,
+        "maxInstances": 100,
+        "resourceLoading": {
+          "schemas": true,
+          "services": true,
+          "plugins": false,
+          "routes": true
+        },
+        "mergeStrategy": "extend",
+        "parent": null,
+        "security": {
+          "isolation": "relaxed",
+          "crossEntityAccess": true,
+          "authentication": "optional",
+          "authorization": "feature-flags"
+        }
+      },
+      "region": {
+        "enabled": true,
+        "basePath": "/regions",
+        "identificationStrategy": "header",
+        "headerName": "X-Region",
+        "headerPattern": "^(.+)$",
+        "routePrefix": "/regions/{entityId}",
+        "priority": 3,
+        "maxInstances": 20,
+        "resourceLoading": {
+          "schemas": false,
+          "services": true,
+          "plugins": true,
+          "routes": true
+        },
+        "mergeStrategy": "isolate",
+        "parent": null,
+        "security": {
+          "isolation": "relaxed",
+          "crossEntityAccess": false,
+          "authentication": "optional",
+          "authorization": "none"
+        }
+      },
+      "brand": {
+        "enabled": true,
+        "basePath": "/brands",
+        "identificationStrategy": "query",
+        "parameterName": "brand",
+        "defaultValue": "default",
+        "routePrefix": "/brands/{entityId}",
+        "priority": 4,
+        "maxInstances": 30,
+        "resourceLoading": {
+          "schemas": true,
+          "services": false,
+          "plugins": true,
+          "routes": true
+        },
+        "mergeStrategy": "override",
+        "parent": null,
+        "security": {
+          "isolation": "relaxed",
+          "crossEntityAccess": true,
+          "authentication": "optional",
+          "authorization": "none"
+        }
+      },
+      "department": {
+        "enabled": false,
+        "basePath": "/departments",
+        "identificationStrategy": "composite",
+        "strategies": [
+          {
+            "type": "header",
+            "headerName": "X-Department",
+            "priority": 0
+          },
+          {
+            "type": "path",
+            "pathPrefix": "/departments",
+            "pathSegment": 1,
+            "priority": 1
+          }
+        ],
+        "routePrefix": "/departments/{entityId}",
+        "priority": 5,
+        "maxInstances": 50,
+        "resourceLoading": {
+          "schemas": true,
+          "services": true,
+          "plugins": true,
+          "routes": true
+        },
+        "mergeStrategy": "extend",
+        "parent": "tenant",
+        "security": {
+          "isolation": "strict",
+          "crossEntityAccess": false,
+          "authentication": "required",
+          "authorization": "rbac"
+        }
+      },
+      "capabilities": {
+        "enabled": true,
+        "basePath": "/capabilities",
+        "identificationStrategy": "path",
+        "pathPrefix": "/capabilities",
+        "pathSegment": 1,
+        "routePrefix": "/capabilities/{entityId}",
+        "priority": 6,
+        "maxInstances": 100,
+        "resourceLoading": {
+          "schemas": true,
+          "services": true,
+          "plugins": true,
+          "routes": true
+        },
+        "mergeStrategy": "extend",
+        "parent": null,
+        "security": {
+          "isolation": "relaxed",
+          "crossEntityAccess": true,
+          "authentication": "optional",
+          "authorization": "feature-flags"
+        }
+      }
+    },
+    "defaultEntity": "tenant",
+    "hierarchicalLoading": true,
+    "globalResources": {
+      "schemas": "/schemas",
+      "services": "/services",
+      "plugins": "/plugins",
+      "routes": "/routes"
+    },
+    "autoLoad": true
+  },
+  "security": {
+    "globalPolicies": {
+      "pathTraversalProtection": true,
+      "entityValidation": true,
+      "rateLimiting": {
+        "enabled": false,
+        "perEntity": true,
+        "windowMs": 900000,
+        "maxRequests": 1000
+      }
+    }
+  },
+  "monitoring": {
+    "metrics": {
+      "enabled": true,
+      "collectInterval": 60000,
+      "retentionPeriod": 86400000
+    },
+    "healthCheck": {
+      "enabled": true,
+      "interval": 30000,
+      "timeout": 5000
+    }
+  }
+}

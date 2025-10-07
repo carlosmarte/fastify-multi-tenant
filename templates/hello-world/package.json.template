@@ -1,0 +1,41 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "1.0.0",
+  "description": "A Generic Entity Framework application generated from mta-helloworld template",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fastify",
+    "multi-tenant",
+    "entity",
+    "framework",
+    "hello-world"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.24.0",
+    "fastify-plugin": "^4.5.0",
+    "@fastify/jwt": "^7.2.0",
+    "fast-glob": "^3.3.0",
+    "close-with-grace": "^1.2.0",
+    "deepmerge": "^4.3.0",
+    "find-up": "^7.0.0",
+    "dotenv": "^16.3.0",
+    "dotenv-expand": "^10.0.0",
+    "import-meta-resolve": "^4.0.0",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "pino-pretty": "^10.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

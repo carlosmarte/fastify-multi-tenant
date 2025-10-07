@@ -1,0 +1,73 @@
+{
+  "server": {
+    "port": 3000,
+    "host": "0.0.0.0"
+  },
+  "logger": {
+    "level": "info",
+    "pretty": true
+  },
+  "plugins": {
+    "coreOrder": ["logger"]
+  },
+  "entities": {
+    "definitions": {
+      "tenant": {
+        "enabled": true,
+        "basePath": "/tenants",
+        "identificationStrategy": "composite",
+        "strategies": [
+          {
+            "type": "subdomain",
+            "priority": 1,
+            "extractPattern": "^([^.]+)\\.localhost(:[0-9]+)?$"
+          },
+          {
+            "type": "path", 
+            "priority": 2,
+            "pathPrefix": "/tenants",
+            "pathSegment": 1
+          },
+          {
+            "type": "query",
+            "priority": 3,
+            "parameterName": "tenant"
+          }
+        ],
+        "routePrefix": "/app/{entityId}",
+        "resourceLoading": {
+          "schemas": true,
+          "services": true,
+          "plugins": false,
+          "routes": true
+        },
+        "maxInstances": 100,
+        "priority": 1,
+        "security": {
+          "authentication": "optional",
+          "isolation": "relaxed"
+        }
+      }
+    },
+    "defaultEntity": "tenant",
+    "hierarchicalLoading": true,
+    "globalResources": {
+      "schemas": "/schemas",
+      "services": "/services", 
+      "plugins": "/plugins",
+      "routes": "/routes"
+    }
+  },
+  "security": {
+    "validateInputs": true,
+    "maxIdLength": 64,
+    "globalPolicies": {
+      "pathTraversalProtection": true,
+      "entityValidation": true,
+      "rateLimiting": {
+        "enabled": false,
+        "perEntity": false
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@thinkeloquent/core-cache",
+  "version": "1.0.0",
+  "description": "Shared caching infrastructure for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs"
+    },
+    "./cache-store": {
+      "import": "./cache-store.mjs"
+    },
+    "./cache-manager": {
+      "import": "./cache-manager.mjs"
+    },
+    "./strategies/lru": {
+      "import": "./strategies/lru.mjs"
+    },
+    "./strategies/ttl": {
+      "import": "./strategies/ttl.mjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "cache",
+    "caching",
+    "lru",
+    "ttl",
+    "memory-cache",
+    "performance"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@thinkeloquent/core-entity-identification-strategy",
+  "version": "1.0.0",
+  "description": "Entity identification strategies for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./base": "./base.mjs",
+    "./manager": "./manager.mjs",
+    "./factory": "./factory.mjs",
+    "./strategies/subdomain": "./strategies/subdomain.mjs",
+    "./strategies/path": "./strategies/path.mjs",
+    "./strategies/header": "./strategies/header.mjs",
+    "./strategies/query": "./strategies/query.mjs",
+    "./strategies/composite": "./strategies/composite.mjs"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "entity-identification",
+    "multi-tenant",
+    "strategy-pattern",
+    "subdomain",
+    "path-based",
+    "header-based"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "@thinkeloquent/core-security": "file:../security"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

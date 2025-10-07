@@ -1,0 +1,22 @@
+{
+  "name": "@thinkeloquent/core-folders",
+  "version": "1.0.0",
+  "description": "Core folder and path utilities for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./path-resolver": "./path-resolver.mjs"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "find-up": "^7.0.0",
+    "import-meta-resolve": "^4.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@thinkeloquent/core-security",
+  "version": "1.0.0",
+  "description": "Core security services and validation utilities for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./entity": "./entity-security.mjs"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "security",
+    "validation",
+    "entity-security",
+    "input-validation",
+    "authentication"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

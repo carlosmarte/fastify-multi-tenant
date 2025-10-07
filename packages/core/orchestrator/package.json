@@ -1,0 +1,48 @@
+{
+  "name": "@thinkeloquent/core-orchestrator",
+  "version": "1.0.0",
+  "description": "Entity orchestration and coordination for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs"
+    },
+    "./entity-factory": {
+      "import": "./entity-factory.mjs"
+    },
+    "./entity-registry": {
+      "import": "./entity-registry.mjs"
+    },
+    "./entity-manager": {
+      "import": "./entity-manager.mjs"
+    },
+    "./entity-coordinator": {
+      "import": "./entity-coordinator.mjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "orchestration",
+    "entity-management",
+    "factory",
+    "registry",
+    "coordinator",
+    "multi-tenant"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "@thinkeloquent/core-entities": "file:../entities",
+    "@thinkeloquent/core-loading-strategy": "file:../loading-strategy",
+    "@thinkeloquent/core-entity-identification-strategy": "file:../entity-identification-strategy",
+    "@thinkeloquent/core-security": "file:../security",
+    "@thinkeloquent/core-configure": "file:../configure",
+    "@thinkeloquent/core-folders": "file:../folders",
+    "@thinkeloquent/core-cache": "file:../cache"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@thinkeloquent/core-configure",
+  "version": "1.0.0",
+  "description": "Core configuration management for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./entity-configuration": "./entity-configuration.mjs"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "configuration",
+    "entity-config",
+    "config-management",
+    "validation",
+    "defaults"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "deepmerge": "^4.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}

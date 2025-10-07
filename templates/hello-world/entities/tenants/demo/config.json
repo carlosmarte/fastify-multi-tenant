@@ -1,0 +1,47 @@
+{
+  "name": "Demo Tenant",
+  "active": true,
+  "priority": 1,
+  "description": "A demonstration tenant showing the Generic Entity Framework capabilities",
+  "features": {
+    "helloWorld": true,
+    "customGreeting": true,
+    "entityInfo": true,
+    "demonstrations": true
+  },
+  "settings": {
+    "theme": "demo",
+    "timezone": "UTC",
+    "locale": "en-US",
+    "customMessage": "Hello from the Demo Tenant!"
+  },
+  "metadata": {
+    "created": "{{TIMESTAMP}}",
+    "template": "mta-helloworld",
+    "version": "1.0.0"
+  },
+  "demonstrations": {
+    "identificationStrategies": [
+      {
+        "name": "Subdomain",
+        "url": "http://demo.localhost:3000/app/demo/hello",
+        "description": "Access via subdomain - perfect for SaaS applications"
+      },
+      {
+        "name": "Path-based",
+        "url": "http://localhost:3000/tenants/demo/hello", 
+        "description": "Access via URL path - great for API endpoints"
+      },
+      {
+        "name": "Query parameter",
+        "url": "http://localhost:3000/api/hello?tenant=demo",
+        "description": "Access via query parameter - flexible for any URL"
+      }
+    ],
+    "endpoints": [
+      "/hello - Main hello world endpoint",
+      "/info - Entity information and capabilities",
+      "/greeting - Customizable greeting endpoint"
+    ]
+  }
+}

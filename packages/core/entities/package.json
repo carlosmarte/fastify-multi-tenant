@@ -1,0 +1,69 @@
+{
+  "name": "@thinkeloquent/core-entities",
+  "version": "1.0.0",
+  "description": "Core entity management system for fastify-mta-server",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs"
+    },
+    "./context": {
+      "import": "./context.mjs"
+    },
+    "./lifecycle": {
+      "import": "./lifecycle/index.mjs"
+    },
+    "./lifecycle/states": {
+      "import": "./lifecycle/states.mjs"
+    },
+    "./lifecycle/manager": {
+      "import": "./lifecycle/manager.mjs"
+    },
+    "./adapters": {
+      "import": "./adapters/index.mjs"
+    },
+    "./adapters/base": {
+      "import": "./adapters/base.mjs"
+    },
+    "./adapters/local": {
+      "import": "./adapters/local.mjs"
+    },
+    "./adapters/npm": {
+      "import": "./adapters/npm.mjs"
+    },
+    "./entity-factory": {
+      "import": "./entity-factory.mjs"
+    },
+    "./entity-registry": {
+      "import": "./entity-registry.mjs"
+    },
+    "./entity-manager": {
+      "import": "./entity-manager.mjs"
+    }
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "entity",
+    "multi-tenant",
+    "lifecycle",
+    "adapter",
+    "resource-loading",
+    "factory",
+    "registry"
+  ],
+  "dependencies": {
+    "@thinkeloquent/core-exceptions": "file:../exceptions",
+    "@thinkeloquent/core-folders": "file:../folders",
+    "@thinkeloquent/core-security": "file:../security",
+    "@thinkeloquent/core-configure": "file:../configure",
+    "@thinkeloquent/core-orchestrator": "file:../orchestrator",
+    "fast-glob": "^3.3.0",
+    "import-meta-resolve": "^4.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.4"
+  }
+}
